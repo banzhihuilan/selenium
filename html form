@@ -1,0 +1,614 @@
+HTML表单  第一部分：表单学习
+<html>
+<body>
+<form>
+
+名：
+<input type="text" name="firstname">    //文本域（Text Fields）
+<br />
+
+<input type="radio" name="sex" value="male" checked="checked" />Male  
+//单选按钮（Radio Buttons）
+<br />
+
+<input type="radio" name="sex" value="female" />Female
+<br /> 
+
+<input type="checkbox" name="bike" checked="checked"/>  //复选框（Checkboxes）
+I have a bike
+<br />
+
+<select name="cars">   //下拉列表
+<option value="volvo">Volvo</option>
+<option value="saab">Saab</option>
+<option value="fiat" selected="selected">Fiat</option>
+<option value="audi">Audi</option>
+</select>
+
+</form>
+</body>
+</html>
+
+
+
+<html>
+
+<body>
+
+<form>
+
+  <input type="button" value="Hello world!">  //创建按钮
+  <br /><br />
+
+  <fieldset>
+    <legend>健康信息</legend>
+    身高：<input type="text" />
+    体重：<input type="text" />
+  </fieldset>
+  <br />
+
+  <fieldset>                  //Fieldset around data
+    <legend>人</legend>
+    颜色：<input type="text">
+    <br />
+    头发：<input type="radio" name="color" value="blue"/>Blue
+    <br />
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="color" value="black"/>Black
+</form>
+
+<p>如果表单周围没有边框，说明您的浏览器太老了。</p>
+
+</body>
+</html>
+
+
+
+<html>
+
+<body>
+
+<form  action="http://www.baidu.com" method="get">  //表单的动作属性
+     I have a bike:
+     <input type="checkbox" name="vehicle" value="Bike" checked="checked" />
+     <br />
+      I have a car:
+     <input type="checkbox" name="vehicle" value="Bike" />
+     <br />
+      I have an airplane:
+     <input type="checkbox" name="vehicle" value="Bike" />
+     <br />
+     Male:
+     <input type="radio" name="sex" value="Male" checked="checked" />
+     <br />
+     Female:
+     <input type="radio" name="sex" value="Female" />
+     <br />
+     <p>First name: <input type="text" name="fname" /></p>
+     <p>Last name: <input type="text" name="lname" /></p>          
+     <input type="submit" value="submit" />  //确认按钮
+</form>
+
+</body>
+</html>
+
+
+
+<html>
+
+<body>
+
+<form action="MAILTO:2555bc@163.com" method="post" enctype="text/plain">
+<h3>表单会发到我的邮箱。</h3>
+姓名：<br />
+<input type="text" name="name" value="fanny" size="20" />
+<br />
+电邮：<br />
+<input type="text" name="mail" value="mymail" size="20" />
+<br />
+内容：<br />
+<input type="text" name="comment" value="i want to test" size="20" />
+<br /><br />
+<input type="submit" value="发送" />
+<input type="reset" value="重置" />   
+</form>
+
+</body>
+</html>
+
+
+
+HTML 表单 第二部分：表单中的标签
+
+<form>标签：
+表单能够包含 input 、textarea、fieldset、legend 和 label 元素。
+表单用于向服务器传输数据。
+注释：form 元素是块级元素，其前后会产生折行。
+
+<input>标签：
+<input> 标签用于搜集用户信息。
+根据不同的 type 属性值，输入字段拥有很多种形式。输入字段可以是文本字段、复选框、掩码后的文本控件、单选按钮、按钮等等。
+
+<textarea>标签：
+<textarea>标签定义多行的文本输入控件。
+可以通过 cols 和 rows 属性来规定 textarea 的尺寸，不过更好的办法是使用 CSS 的 height 和 width 属性。
+注释：在文本输入区内的文本行间，用 "%OD%OA" （回车/换行）进行分隔。
+提示：可以通过 <textarea> 标签的 wrap 属性设置文本输入区内的换行模式。
+
+<textarea rows="3" cols="20">
+在w3school，你可以找到你所需要的所有的网站建设教程。
+</textarea>
+
+<button>标签：
+<button> 标签定义一个按钮。
+在 button 元素内部，您可以放置内容，比如文本或图像。这是该元素与使用 input 元素创建的按钮之间的不同之处。
+<button> 控件 与 <input type="button"> 相比，提供了更为强大的功能和更丰富的内容。<button> 与 </button> 标签之间的所有内容都是按钮的内容，其中包括任何可接受的正文内容，比如文本或多媒体内容。例如，我们可以在按钮中包括一个图像和相关的文本，用它们在按 钮中创建一个吸引人的标记图像。
+唯一禁止使用的元素是图像映射，因为它对鼠标和键盘敏感的动作会干扰表单按钮的行为。
+请始终为按钮规定 type 属性。Internet Explorer 的默认类型是 "button"，而其他浏览器中（包括 W3C 规范）的默认值是 "submit"。
+重要事项：如果在 HTML 表单中使用 button 元素，不同的浏览器会提交不同的值。Internet Explorer 将提交 <button> 与 <button/> 之间的文本，而其他浏览器将提交 value 属性的内容。请在 HTML 表单中使用 input 元素来创建按钮。
+
+<button type="button">Click Me!</button>     
+
+<select>标签：
+select 元素可创建单选或多选菜单。
+当提交表单时，浏览器会提交选定的项目，或者收集用逗号分隔的多个选项，将其合成一个单独的参数列表，并且在将 <select> 表单数据提交给服务器时包括 name 属性。
+提示：select 元素是一种表单控件，可用于在表单中接受用户输入。
+
+<optgroup>标签：
+<optgroup> 标签定义选项组。
+optgroup 元素用于组合选项。当您使用一个长的选项列表时，对相关的选项进行组合会使处理更加容易。
+
+<html>
+<body>
+<select>
+  <optgroup label="Swedish Cars">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+  </optgroup>
+  <optgroup label="German Cars">
+    <option value="mercedes">Mercedes</option>
+    <option value="audi">Audi</option>
+  </optgroup>
+  <optgroup label="people">
+     <option value="female">Female</option>
+     <option value="male">Male</option>
+  </optgroup>
+</select> 
+</body>
+</html>
+
+<option>标签：
+option 元素定义下拉列表中的一个选项（一个条目）。
+浏览器将 <option> 标签中的内容作为 <select> 标签的菜单或是滚动列表中的一个元素显示。option 元素位于 select 元素内部。
+注释：<option> 标签可以在不带有任何属性的情况下使用，但是您通常需要使用 value 属性，此属性会指示出被送往服务器的内容。
+注释：请与 select 元素配合使用此标签，否则这个标签是没有意义的。
+提示：如果列表选项很多，可以使用 <optgroup> 标签对相关选项进行组合。
+
+<label>标签：
+<label> 标签为 input 元素定义标注（标记）。
+label 元素不会向用户呈现任何特殊效果。不过，它为鼠标用户改进了可用性。如果您在 label 元素内点击文本，就会触发此控件。就是说，当用户选择该标签时，浏览器就会自动将焦点转到和标签相关的表单控件上。
+<label> 标签的 for 属性应当与相关元素的 id 属性相同。
+注释："for" 属性可把 label 绑定到另外一个元素。请把 "for" 属性的值设置为相关元素的 id 属性的值。
+
+<html>
+<body>
+
+<p>请点击文本标记之一，就可以触发相关控件：</p>
+
+<form>
+<label for="male">Male</label>
+<input type="radio" name="sex" id="male" />
+<br />
+<label for="female">Female</label>
+<input type="radio" name="sex" id="female" />
+</form>
+
+</body>
+</html>
+
+点这个文本，radio也能被选中
+
+<fieldset> 标签：
+fieldset 元素可将表单内的相关元素分组。
+<fieldset> 标签将表单内容的一部分打包，生成一组相关表单的字段。
+当一组表单元素放到 <fieldset> 标签内时，浏览器会以特殊方式来显示它们，它们可能有特殊的边界、3D 效果，或者甚至可创建一个子表单来处理这些元素。
+<fieldset> 标签没有必需的或唯一的属性。
+<legend> 标签为 fieldset 元素定义标题。
+
+HTML表单  第三部分：表单中标签的属性
+<form>标签的属性：
+
+必需的属性：action
+值：URL      描述：规定当提交表单时，向何处发送表单数据
+<form action="MAILTO:2555bc@163.com" method="post" enctype="text/plain">
+
+可选的属性：
+
+<form action="form_action.asp" accept="image/gif, image/jpeg">
+注释：几乎没有浏览器正确地支持 accept 属性。
+
+<form action="form_action.asp" accept-charset="ISO-8859-1">
+注释：accept-charset 属性无法在 Internet Explorer 中正确地工作。如果 accept-charset 属性设置为 "ISO-8859-1"，IE 将发送以 "Windows-1252" 编码的数据
+
+<form action="form_action.asp" method="get" name="myForm">
+
+<form action="form_action.asp" method="get" target="_blank">
+在新窗口中打开
+
+注：支持HTML全局属性和事件属性，以下不另注则都支持，另注则不支持。
+
+<input>标签的属性：
+
+可选的属性：
+
+accept 属性只能与 <input type="file"> 配合使用。它规定能够通过文件上传进行提交的文件类型。
+提示：请避免使用该属性。应该在服务器端验证文件上传。
+在文件上传中使用 accept 属性，本例中的输入字段可以接受 GIF 和 JPEG 两种图像：
+<input type="file" name="pic" id="pic" accept="image/gif, image/jpeg" />
+如果不限制图像的格式，可以写为：accept="image/*"
+
+alt 属性只能与 <input type="image"> 配合使用。它为图像输入规定替代文本。
+alt 属性为用户由于某些原因无法查看图像时提供了备选的信息。
+注释：即使 alt 属性不是必需的属性，但是当输入类型为 image 时，仍然应该设置该属性。如果不使用该属性，就有可能对文本浏览器或非可视的浏览器造成使用障碍。
+<form action="/example/html/form_action.asp" method="get">
+  <p>First name: <input type="text" name="fname" /></p>
+  <p>Last name: <input type="text" name="lname" /></p>
+  <input type="image" src="/i/eg_submit.jpg" alt="Submit" align="right"/>
+  <p>This is some text This is some text This is some text This is some text This is some text This is some text This is some text This is some text This is some text This is some text This is some text This is some text This is some text This is some text This is some text This is some text This is some text This is some text .</p>
+</form>
+
+单击图像，输入会发送到服务器上名为 "form_action.asp" 的页面
+除了 Safari，所有主流的浏览器都支持 "alt" 属性。
+<input alt="value">     属性值value:图像 input 的替代文本。
+
+checked 属性规定在页面加载时应该被预先选定的 input 元素。
+checked 属性 与 <input type="checkbox"> 或 <input type="radio"> 配合使用。
+checked 属性也可以在页面加载后，通过 JavaScript 代码进行设置。
+<input checked="value">   属性值checked:预先选定复选框或单选按钮。
+
+disabled 属性规定应该禁用 input 元素。
+被禁用的 input 元素既不可用，也不可点击。可以设置 disabled 属性，直到满足某些其他的条件为止（比如选择了一个复选框等等）。然后，就需要通过 JavaScript 来删除 disabled 值，将 input 元素的值切换为可用。
+注释：disabled 属性无法与 <input type="hidden"> 一起使用。
+<p>Last name: <input type="text" name="lname" disabled="disabled" /></p>
+无法输入内容
+
+maxlength 属性规定输入字段的最大长度，以字符个数计。
+maxlength 属性与 <input type="text"> 或 <input type="password"> 配合使用。
+<p>Email: <input type="text" name="email" maxlength="55" /></p>
+限制输入的字符数
+
+name 属性规定 input 元素的名称。
+name 属性用于对提交到服务器后的表单数据进行标识，或者在客户端通过 JavaScript 引用表单数据。
+注释：只有设置了 name 属性的表单元素才能在提交表单时传递它们的值。
+
+readonly 属性规定输入字段为只读。
+只读字段是不能修改的。不过，用户仍然可以使用 tab 键切换到该字段，还可以选中或拷贝其文本。
+readonly 属性可以防止用户对值进行修改，直到满足某些条件为止（比如选中了一个复选框）。然后，需要使用 JavaScript 消除 readonly 值，将输入字段切换到可编辑状态。
+readonly 属性可与 <input type="text"> 或 <input type="password"> 配合使用。
+
+size 属性规定输入字段的宽度。
+对于 <input type="text"> 和 <input type="password">，size 属性定义的是可见的字符数。而对于其他类型，size 属性定义的是以像素为单位的输入字段宽度。
+<p>Email: <input type="text" name="email" size="35" /></p>
+框显示的长度
+兼容性提示：
+由于 size 属性是一个可视化的设计属性，我们推荐您使用 CSS 来代替它。
+CSS 语法：<p>Email: <input type="text" name="email" style="width:150px" /></p>
+
+src 属性只能与 <input type="image"> 配合使用。它规定作为提交按钮显示的图像的 URL。
+<input type="image" src="/i/eg_submit.jpg" alt="Submit" />
+
+<input src="value">  属性值URL：作为提交按钮使用的图像的 URL。
+可能的值：
+绝对 URL - 指向另一个站点（比如 src="www.example.com/submit.gif"）
+相对 URL - 指向网站内的文件（比如 src="submit.gif"）
+
+type 属性规定 input 元素的类型。
+语法：<input type="value">
+
+Text:<input type="text" /> 定义用户可输入文本的单行输入字段。
+ <p>Pin: <input type="text" name="pin" maxlength="18" /></p>
+
+
+Button：<input type="button" /> 定义可点击的按钮，但没有任何行为。button 类型常用于在用户点击按钮时启动 JavaScript 程序。
+<html>
+<head>
+<script type="text/javascript">
+  function msg()
+  {
+  alert("Hello world!");
+  }
+</script>
+</head>
+<body>
+
+<form>
+<input type="button" value="Click me" onclick="msg()" />
+</form>
+
+<p>如果点击上面的按钮，会启动一段 JavaScript。如果您希望学习更多有关 JavaScript 的知识，请访问我们的 JavaScript 教程。</p>
+
+</body>
+</html>
+
+
+Checkbox:<input type="checkbox" /> 定义复选框。复选框允许用户在一定数目的选择中选取一个或多个选项。
+<form action="/example/html/form_action.asp" method="get">
+<input type="checkbox" name="vehicle" value="Bike" /> I have a bike<br />
+<input type="checkbox" name="vehicle" value="Car" /> I have a car<br />
+<input type="checkbox" name="vehicle" value="Airplane" /> I have an airplane<br />
+<input type="submit" value="Submit" />
+</form>
+
+
+File:<input type="file" /> 用于文件上传。
+<form>
+<input type="file" name="pic" accept="image/gif" />
+</form>
+
+
+Hidden:<input type="hidden" /> 定义隐藏字段。隐藏字段对于用户是不可见的。隐藏字段通常会存储一个默认值，它们的值也可以由 JavaScript 进行修改。
+<input type="hidden" name="country" value="Norway" />
+Image:<input type="image" /> 定义图像形式的提交按钮。
+必须把 src 属性 和 alt 属性 与 <input type="image"> 结合使用。
+<input type="image" src="/i/eg_submit.jpg" alt="Submit" />
+
+Password:<input type="password" /> 定义密码字段。密码字段中的字符会被掩码（显示为星号或原点）。
+Password: <input type="password" name="pwd" maxlength="8" /><br />
+
+
+Radio:<input type="radio" /> 定义单选按钮。单选按钮允许用户选取给定数目的选择中的一个选项。
+<input type="radio" name="sex" value="male" /> Male
+
+Reset Button:<input type="reset" /> 定义重置按钮。重置按钮会清除表单中的所有数据。
+<input type="reset" value="Reset" />
+
+Submit:<input type="submit" /> 定义提交按钮。提交按钮用于向服务器发送表单数据。数据会发送到表单的 action 属性中指定的页面。
+<input type="submit" />
+
+value 属性为 input 元素设定值。
+对于不同的输入类型，value 属性的用法也不同：
+type="button", "reset", "submit" - 定义按钮上的显示的文本
+type="text", "password", "hidden" - 定义输入字段的初始值
+type="checkbox", "radio", "image" - 定义与输入相关联的值
+注释：<input type="checkbox"> 和 <input type="radio"> 中必须设置 value 属性。
+注释：value 属性无法与 <input type="file"> 一同使用。
+<form action="/example/html/form_action.asp" method="get">
+  First name: <input type="text" name="fname" value="George" /><br />
+  Last name: <input type="text" name="lname" value="Bush" /><br />
+  <input type="submit" value="Submit form" />
+</form>
+
+
+<textarea>标签的属性：
+
+必要的属性：cols     ,   rows
+cols 属性规定 textarea 的可见宽度。
+rows 属性规定 textarea 的可见高度。
+<textarea cols="30" rows="5">
+
+
+可选的属性：
+disabled 属性规定禁用文本区。被禁用的文本区既不可用，也不可点击。
+可以设置 disabled 属性，直到满足某些条件（比如选择一个复选框），才恢复用户对该文本区的使用。然后，可以使用 JavaScript 来清除 disabled 属性，以使文本区变为可用状态。
+<textarea cols="30" rows="5" disabled="disabled">
+
+
+name 属性为文本区规定名称。
+name 属性用于在 JavaScript 中对元素进行引用，或者在表单提交之后，对表单数据进行引用。
+<textarea rows="3" cols="20" name="W3School_text">
+在w3school，你可以找到你所需要的所有的网站建设教程。
+</textarea>
+
+readonly 属性规定文本区为只读。
+在只读的文本区中，无法对内容进行修改，但用户可以通过 tab 键切换到该控件，选取或复制其中的内容。
+可以设置 readonly 属性，直到满足某些条件（比如选择一个复选框），才恢复用户对该文本区的使用。然后，可以使用 JavaScript 来清除 readonly 属性，以使文本区变为可编辑状态。
+<textarea rows="3" cols="20" readonly="readonly">
+在w3school，你可以找到你所需要的所有的网站建设教程。
+</textarea>
+
+<button>标签的属性：
+
+可选的属性：
+disabled 属性规定禁用按钮。
+被禁用的按钮既不可用，也不可点击。
+可以设置 disabled 属性，直到满足某些条件（比如选择一个复选框），才恢复用户对该按钮的使用。然后，可以使用 JavaScript 来清除 disabled 属性，以使文本区变为可用状态。
+<button type="button" disabled="disabled">Click Me!</button>
+
+
+name 属性为按钮规定名称。
+name 属性用于在 JavaScript 中对元素进行引用，或者在表单提交之后，对表单数据进行引用。
+提示：不同的 button 元素可以共享相同的名称。这就允许您标记带有相同名称的若干按钮，以便在表单中使用时能够提交不同的值。
+
+type 属性规定按钮的类型。
+提示：请始终为按钮规定 type 属性。Internet Explorer 的默认类型是 "button"，而其他浏览器中（包括 W3C 规范）的默认值是 "submit"。
+<button type="value">
+
+
+value 属性规定与按钮关联的初始值。
+重要事项：如果在 HTML 表单中使用 button 元素，不同的浏览器会提交不同的值。Internet Explorer 将提交 <button> 与 <button/> 之间的文本，而其他浏览器将提交 value 属性的内容。请在 HTML 表单中使用 input 元素来创建按钮。
+ <button name="subject" type="submit" value="HTML">HTML</button>
+ <button name="subject" type="submit" value="CSS">CSS</button>
+
+<select>标签的属性：
+
+可选的属性：
+disabled 属性规定禁用下拉列表。被禁用的下拉列表既不可用，也不可点击。
+可以设置 disabled 属性，直到满足某些条件（比如选择一个复选框），才恢复用户对该下拉列表的使用。然后，可用 JavaScript 来清除 disabled 属性，以使下拉列表变为可用状态。 
+<select disabled="disabled">
+
+multiple 属性规定可同时选择多个选项。
+在不同操作系统中，选择多个选项的差异：
+对于 windows：按住 Ctrl 按钮来选择多个选项
+对于 Mac：按住 command 按钮来选择多个选项
+由于上述差异的存在，同时由于需要告知用户可以使用多项选择，对用户更友好的方式是使用复选框。
+提示：可以把 multiple 属性与 size 属性配合使用，来定义可见选项的数目。
+<html>
+<body>
+
+<select multiple="multiple" size="6">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select>
+
+</body>
+</html>
+按住 Ctrl 按钮来选择多个选项，size=6表示可见选项数目区域为6
+
+size 属性规定下拉列表中可见选项的数目。
+如果 size 属性的值大于 1，但是小于列表中选项的总数目，浏览器会显示出滚动条，表示可以查看更多选项。
+
+name 属性规定 select 元素的名称。
+name 属性用于对提交到服务器后的表单数据进行标识，或者在客户端通过 JavaScript 引用表单数据。
+<select name="carlist">
+
+<optgroup>标签的属性：
+
+必要的属性：
+label 属性为选项组规定描述。
+<select>
+  <optgroup label="Swedish Cars">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+  </optgroup>
+  <optgroup label="German Cars">
+    <option value="mercedes">Mercedes</option>
+    <option value="audi">Audi</option>
+  </optgroup>
+</select>
+
+
+可选的属性：
+disabled 属性规定禁用该选项组。被禁用的选项组既不可用，也不可点击。
+可以设置 disabled 属性，直到满足某些条件（比如选择一个复选框），才恢复用户对该选项组的使用。然后，可以使用 JavaScript 来清除 disabled 属性，以使选项组变为可用状态。
+<select>
+  <optgroup label="Swedish Cars">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+  </optgroup>
+  <optgroup label="German Cars" disabled="disabled">
+    <option value="mercedes">Mercedes</option>
+    <option value="audi">Audi</option>
+  </optgroup>
+</select>
+整个这部分不可用也不可点击（禁用选项组）
+
+<option>标签的属性：
+可选的属性：
+disabled 属性规定某个选项应该被禁用。被禁用的选项既不可用，也不可点击。
+可以设置 disabled 属性，直到满足某些条件（比如选择一个复选框），才恢复用户对该选项的使用。然后，可以使用 JavaScript 来清除 disabled 属性，以使选项变为可用状态。
+<option disabled="disabled">Mercedes</option>
+
+除了 Internet Explorer，所有浏览器都支持 disabled 属性
+
+label 属性规定更短版本的选项。(ie7+)
+下拉列表中会显示出所规定的更短版本。
+<select>
+  <option label="Volvo">Volvo (Latin for "I roll")</option>
+  <option label="Saab">Saab (Swedish Aeroplane AB)</option>
+  <option label="Mercedes">Mercedes (Mercedes-Benz)</option>
+  <option label="Audi">Audi (Auto Union Deutschland Ingolstadt)</option>
+</select>
+
+
+selected 属性规定在页面加载时预先选定该选项。
+被预选的选项会显示在下拉列表最前面的位置。
+也可以在页面加载后通过 JavaScript 设置 selected 属性。
+<select>
+  <option>Volvo</option>
+  <option selected="selected">Saab</option>
+  <option>Mercedes</option>
+  <option>Audi</option>
+</select>
+
+
+value 属性规定在表单被提交时被发送到服务器的值。
+<option> 与 <option/> 之间的值是浏览器显示在下拉列表中的内容，而 value 属性中的值是表单被提交时被发送到服务器的值。
+注释：如果没有指定 value 属性，选项的值将设置为 <option> 标签中的内容。
+<select name="cars">
+  <option value="volvo">Volvo XC90</option>
+  <option value="saab">Saab 95</option>
+  <option value="mercedes">Mercedes SLK</option>
+  <option value="audi">Audi TT</option>
+</select>
+
+<label>标签的属性：
+可选的属性：
+for 属性规定 label 与哪个表单元素绑定。
+属性值 element_id  :label 要绑定的元素的 id。
+
+HTML表单  第四部分：HTM中的全局属性和事件属性
+核心属性 (Core Attributes)
+以下标签不提供下面的属性：base、head、html、meta、param、script、style 以及 title 元素。
+
+
+class 属性规定元素的类名（classname）。
+class 属性大多数时候用于指向样式表中的类（class）。不过，也可以利用它通过 JavaScript 来改变带有指定 class 的 HTML 元素。
+提示：可以给 HTML 元素赋予多个 class，例如：<span class="left_menu important">。这么做可以把若干个 CSS 类合并到一个 HTML 元素。
+提示：类名不能以数字开头！只有 Internet Explorer 支持这种做法。
+<element class="value">
+
+
+id 属性规定 HTML 元素的唯一的 id。
+id 在 HTML 文档中必须是唯一的。
+id 属性可用作链接锚（link anchor），通过 JavaScript（HTML DOM）或通过 CSS 为带有指定 id 的元素改变或添加样式。
+<element id="value">
+<h1 id="myHeader">W3School is the best!</h1>
+
+
+style 属性规定元素的行内样式（inline style）
+style 属性将覆盖任何全局的样式设定，例如在 <style> 标签或在外部样式表中规定的样式。
+<element style="value">
+
+
+title 属性规定关于元素的额外信息。
+这些信息通常会在鼠标移到元素上时显示一段工具提示文本（tooltip text）。
+提示：title 属性常与 form 以及 a 元素一同使用，以提供关于输入格式和链接目标的信息。同时它也是 abbr 和 acronym 元素的必需属性。
+<element title="value">
+
+<html>
+<body>
+<abbr title="People's Republic of China">PRC</abbr> was founded in 1949.
+<p title="Free Web tutorials">W3School.com.cn</p>
+</body>
+</html>
+当鼠标移到PRC上或出现工具提示文本
+
+语言属性 (Language Attributes)
+以下标签不提供下面的属性：base、br、frame、frameset、hr、iframe、param 以及 script 元素。
+
+
+<element dir="ltr|rtl">
+
+<p dir="rtl">Write this text right-to-left!</p>
+
+<element lang="language_code">
+
+<html>
+<body>
+<p>This is a paragraph.</p>
+<p lang="fr">Ceci est un paragraphe.</p>
+</body>
+</html>
+
+
+键盘属性 (Keyboard Attributes)
+
+
+accesskey 属性规定激活（使元素获得焦点）元素的快捷键。
+注释：以下元素支持 accesskey 属性：<a>, <area>, <button>, <input>, <label>, <legend> 以及 <textarea>。
+<element accesskey="character">
+
+<a href="http://www.w3school.com.cn/html/" accesskey="h">HTML 教程</a><br />
+<a href="http://www.w3school.com.cn/css/" accesskey="c">CSS 教程</a>
+使用Shift + Alt +h就能访问HTML教程
+注释：请使用Alt + accessKey (或者 Shift + Alt + accessKey) 来访问带有指定快捷键的元素。
+
+tabindex 属性规定元素的 tab 键控制次序（当 tab 键用于导航时）。
+注释：以下元素支持 tabindex 属性：<a>, <area>, <button>, <input>, <object>, <select> 以及 <textarea>。
+<element tabindex="number">
+
+<a href="http://www.w3school.com.cn/" tabindex="2">W3School</a><br />
+<a href="http://www.google.com/" tabindex="1">Google</a><br />
+<a href="http://www.microsoft.com/" tabindex="3">Microsoft</a>
+使用键盘上的 "Tab" 键在链接之间进行导航，1是Google，依次
