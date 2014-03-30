@@ -1,0 +1,33 @@
+css 选择器
+
+类选择器
+WebElement loginButton =driver.findElement(By.cssSelector("input.login"));
+
+ID选择器
+WebElement loginButton =driver.findElement(By.cssSelector("input#username"));
+
+子元素选择器
+WebElement userName =driver.findElement(By.cssSelector("form#loginForm > input"));
+
+子元素+相邻元素  选择器
+WebElement productDescription =driver.findElement(By.cssSelector("div#top5 > p + p"));
+
+属性选择器
+单个属性：
+WebElement username=driver.findElement(By.cssSelector("input[name=username]"));
+WebElement button=driver.findElement(By.cssSelector("img[alt=’Previous’]"));
+
+多个属性：
+WebElement button = driver.findElement(By.cssSelector("input[type='submit'][value='Login']"));
+
+只根据属性而不根据属性值定位：
+List<WebElement> imagesWithAlt =driver.findElements(By.cssSelector("img[alt]"));
+
+定位所有不含alt属性的img元素：
+List<WebElement> imagesWithoutAlt =driver.findElements(By.cssSelector("img:not([alt])"));
+
+属性部分匹配：
+input[id^=’ctrl’];       input[id$=’username’];        input[id*=’username’];
+
+伪类
+WebElement userName = driver.findElement(By.cssSelector("form#loginForm :nth-child(2)"));
